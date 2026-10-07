@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 380" role="img" aria-labelledby="title">
+  <title id="title">A customer question gets a helpful answer</title>
+  <rect width="320" height="380" fill="#F5F3EC"/>
+  <path d="M0 60H320M0 120H320M0 180H320M0 240H320M0 300H320M60 0V380M120 0V380M180 0V380M240 0V380M300 0V380" stroke="#193529" opacity=".08"/>
+  <g fill="none" stroke="#193529" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M71 42h178a17 17 0 0 1 17 17v258a17 17 0 0 1-17 17H71a17 17 0 0 1-17-17V59a17 17 0 0 1 17-17Z" fill="#fff"/>
+    <path d="M54 76h212M54 298h212M139 315h42"/>
+    <circle cx="78" cy="59" r="5" fill="#D8F36A"/><path d="M92 59h49"/>
+    <path d="M87 103h123a14 14 0 0 1 14 14v35a14 14 0 0 1-14 14H115l-22 17v-17h-6a14 14 0 0 1-14-14v-35a14 14 0 0 1 14-14Z" fill="#F5F3EC"/>
+    <path d="M112 205h121a14 14 0 0 1 14 14v47a14 14 0 0 1-14 14H112a14 14 0 0 1-14-14v-47a14 14 0 0 1 14-14Z" fill="#D8F36A"/>
+    <circle cx="123" cy="241" r="17" fill="#fff"/><path d="m115 241 6 6 11-14"/>
+    <path d="M153 229h67M153 242h49M153 255h61"/>
+  </g>
+  <g fill="#193529" font-family="Arial,sans-serif" font-weight="700"><text x="89" y="128" font-size="13">WILL IT FIT ME?</text><text x="89" y="146" font-size="10" font-weight="400">I'M BETWEEN TWO SIZES.</text></g>
+  <path d="M32 343h256" stroke="#193529" stroke-width="3" stroke-linecap="round"/>
+  <path d="m33 344 15-10m230 10 12-9" stroke="#193529" stroke-width="2"/>
+</svg>

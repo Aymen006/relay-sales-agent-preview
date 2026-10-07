@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#17362c" />
+    <meta name="description" content="Relay is an AI sales agent for online stores. It replies to buyer comments and messages, collects order details, and sends confirmed orders to your connected system." />
+    <title>Relay — Turn buyer messages into confirmed orders</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css?v=3" />
+    <script>try{if(!sessionStorage.getItem('relay-intro-seen')){document.documentElement.classList.add('intro-pending');sessionStorage.setItem('relay-intro-seen','1')}}catch(error){document.documentElement.classList.add('intro-pending')}</script>
+    <script src="./script.js?v=3" defer></script>
+  </head>
+  <body>
+    <div class="intro-overlay" id="relay-intro" role="dialog" aria-modal="true" aria-labelledby="intro-readable" aria-hidden="true">
+      <div class="intro-top"><a class="brand brand-toggle intro-logo" href="#top" aria-label="Relay home"><span class="brand-glyph" aria-hidden="true"><span class="brand-slash">/</span><span class="brand-r">R</span></span><span class="brand-tail" aria-hidden="true">elay</span><span class="brand-star-box" aria-hidden="true"><svg viewBox="0 0 100 100" focusable="false"><g fill="currentColor"><rect x="45" y="5" width="10" height="90" rx="1" /><rect x="45" y="5" width="10" height="90" rx="1" transform="rotate(45 50 50)" /><rect x="45" y="5" width="10" height="90" rx="1" transform="rotate(90 50 50)" /><rect x="45" y="5" width="10" height="90" rx="1" transform="rotate(135 50 50)" /></g></svg></span></a><button class="intro-skip" type="button">Skip intro <span aria-hidden="true">↗</span></button></div>
+      <div class="intro-center"><p class="intro-accessible" id="intro-readable">Relay runs your entire sales process on its own. It answers questions, recommends products, takes, confirms and places orders, then updates your ERP. No human needed. You bring the product and deliver it. The sales are on us. Connect your shop and Meta, and watch it work.</p><div class="intro-typed" aria-hidden="true"><p class="intro-lead"><span class="relay-name" id="intro-typed-name"></span><span id="intro-typed-1"></span></p><p class="intro-actions"><span id="intro-typed-2"></span><span class="intro-nohuman" id="intro-typed-3"></span></p><p class="intro-payoff"><span id="intro-typed-4"></span><span class="intro-payoff-emphasis" id="intro-typed-5"></span></p><p class="intro-close" id="intro-typed-6"></p><span class="intro-caret" aria-hidden="true"></span></div></div>
+    </div>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" id="top">
+      <a class="brand brand-toggle" href="#top" aria-label="Relay home"><span class="brand-glyph" aria-hidden="true"><span class="brand-slash">/</span><span class="brand-r">R</span></span><span class="brand-tail" aria-hidden="true">elay</span><span class="brand-star-box" aria-hidden="true"><svg viewBox="0 0 100 100" focusable="false"><g fill="currentColor"><rect x="45" y="5" width="10" height="90" rx="1" /><rect x="45" y="5" width="10" height="90" rx="1" transform="rotate(45 50 50)" /><rect x="45" y="5" width="10" height="90" rx="1" transform="rotate(90 50 50)" /><rect x="45" y="5" width="10" height="90" rx="1" transform="rotate(135 50 50)" /></g></svg></span></a>
+      <a class="header-mid action-link" href="#how">HOW <span class="relay-name">RELAY</span> WORKS <span aria-hidden="true">↗</span></a>
+      <div class="header-actions">
+        <a class="button button-small button-lime" href="#contact">SEE WALKTHROUGH STATUS <span class="button-arrow" aria-hidden="true">↗</span></a>
+        <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-menu"><span></span><span></span></button>
+      </div>
+      <nav class="site-menu" id="site-menu" aria-label="Main navigation" hidden>
+        <span class="menu-kicker">EXPLORE <span class="relay-name">RELAY</span></span>
+        <a href="#how">How it works <span>01</span></a>
+        <a href="#flow">Example conversation <span>02</span></a>
+        <a href="#integrations">Connections <span>03</span></a>
+        <a href="#questions">Questions <span>04</span></a>
+        <a href="#contact">Walkthrough status <span>↗</span></a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero grid-surface" aria-labelledby="hero-title">
+        <div class="hero-rail hero-rail-left"><span class="micro-icon">↗</span><span>COMMENTS. MESSAGES.<br />CONFIRMED ORDERS.</span></div>
+        <div class="hero-rail hero-rail-right"><span>FOR ONLINE STORES<br />THAT SELL IN CHAT.</span><span class="micro-icon">✳</span></div>
+        <div class="hero-content">
+          <div class="hero-eyebrow reveal-on-load"><span class="live-dot"></span> AI SALES AGENT FOR ONLINE STORES</div>
+          <h1 class="hero-title reveal-on-load" id="hero-title"><span>TURN BUYER</span><span>MESSAGES INTO</span><span>ORDERS<span class="period">.</span></span></h1>
+          <div class="hero-stage reveal-on-load" aria-label="Commerce channels turning into an order">
+            <div class="channel-sticker channel-instagram" title="Instagram"><img src="https://cdn.simpleicons.org/instagram/E4405F" alt="Instagram" /><span>COMMENT</span></div>
+            <div class="channel-sticker channel-messenger" title="Messenger"><img src="https://cdn.simpleicons.org/messenger/00B2FF" alt="Messenger" /><span>MESSAGE</span></div>
+            <div class="mascot-card"><img src="./assets/relay-receipt-agent.svg" alt="Original ink illustration of a friendly receipt-printer sales agent carrying a phone and parcel" /></div>
+            <div class="channel-sticker channel-facebook" title="Facebook"><img src="https://cdn.simpleicons.org/facebook/0866FF" alt="Facebook" /><span>COMMENT</span></div>
+            <div class="channel-sticker channel-whatsapp" title="WhatsApp"><img src="https://cdn.simpleicons.org/whatsapp/25D366" alt="WhatsApp" /><span>ORDER</span></div>
+            <div class="outcome-stamp" aria-hidden="true"><img src="https://cdn.simpleicons.org/shopify/95BF47" alt="" /> ORDER<br /><strong>CONFIRMED</strong><span>✓</span></div>
+          </div>
+          <p class="hero-summary reveal-on-load"><span class="relay-name">Relay</span> is an AI sales agent for online stores that replies to comments and messages, helps buyers choose, and sends confirmed orders to your connected order system.</p>
+          <a class="button button-lime hero-cta reveal-on-load" href="#how">SEE HOW <span class="relay-name">RELAY</span> WORKS <span class="button-arrow" aria-hidden="true">↘</span></a>
+        </div>
+        <a class="scroll-cue" href="#problem" aria-label="Scroll to the buyer problem">↓</a>
+        <div class="hero-index">001 / <span class="relay-name">RELAY</span></div>
+      </section>
+
+      <section class="buyer-problem grid-surface" id="problem" aria-labelledby="problem-title">
+        <div class="section-topline"><span>THE EVERYDAY HANDOFF</span><span>COMMENTS → DMS → ORDERS</span></div>
+        <div class="buyer-problem-layout">
+          <h2 id="problem-title">A BUYER ASKS.<br /><em>THE ORDER WAITS.</em></h2>
+          <div class="buyer-problem-copy"><p>A shopper asks for a price in a comment. The conversation moves to a message. Someone on your team still has to answer, collect details, and enter the order.</p><a href="#how">SEE WHAT <span class="relay-name">RELAY</span> TAKES ON <span aria-hidden="true">↘</span></a></div>
+        </div>
+      </section>
+
+      <section class="how-it-works" id="how" aria-labelledby="how-title">
+        <div class="section-topline"><span>HOW <span class="relay-name">RELAY</span> WORKS</span><span>ONE BUYER. THREE STEPS.</span></div>
+        <h2 id="how-title">FROM BUYER MESSAGE<br />TO CONFIRMED ORDER.</h2>
+        <div class="how-steps">
+          <article><span>01 / THE BUYER</span><h3>SENDS A MESSAGE</h3><p>A buyer comments, sends a direct message, or leaves a voice note about a product.</p></article>
+          <article><span>02 / <span class="relay-name">RELAY</span></span><h3>ANSWERS AND COLLECTS DETAILS</h3><p><span class="relay-name">Relay</span> answers the question, helps the buyer choose, and asks for the details needed to place the order.</p></article>
+          <article><span>03 / YOUR STORE</span><h3>GETS THE CONFIRMED ORDER</h3><p>After the buyer confirms, <span class="relay-name">Relay</span> sends the order details to your connected store or order system.</p></article>
+        </div>
+        <a class="how-link" href="#flow">SEE AN EXAMPLE CONVERSATION <span aria-hidden="true">↘</span></a>
+      </section>
+
+      <section class="promise" id="promise" aria-labelledby="promise-title">
+        <div class="promise-layout">
+          <div class="promise-aside">
+            <div class="promise-intro">
+              <div class="corner-label">IN THE CONVERSATION <span>✳</span></div>
+              <h2 id="promise-title"><span class="relay-name">RELAY</span> HANDLES THE <em>NEXT MESSAGE.</em></h2>
+              <p>A buyer may need more than one answer before ordering.</p>
+              <p class="promise-sell-line"><span class="relay-name">Relay</span> answers product questions, recommends related items, follows up when a buyer hesitates, and asks them to confirm the order.</p>
+            </div>
+            <div class="promise-visual" aria-label="Illustrations of the active sales capability">
+              <div class="promise-image is-active"><img src="./assets/sale-objections.svg" alt="A customer question answered with a helpful size guide" /></div>
+              <div class="promise-image"><img src="./assets/sale-recommendations.svg" alt="A product recommendation paired with a useful add-on" /></div>
+              <div class="promise-image"><img src="./assets/sale-follow-up.svg" alt="A timely follow-up that brings a buyer back" /></div>
+              <div class="promise-image"><img src="./assets/sale-order.svg" alt="An order receipt confirmed and ready for fulfilment" /></div>
+              <span class="promise-image-caption" aria-hidden="true">FROM QUESTION TO CONFIRMATION ↗</span>
+            </div>
+          </div>
+          <div class="promise-main">
+            <div class="promise-topline"><span>WHAT <span class="relay-name">RELAY</span> DOES BEFORE THE ORDER</span><span class="corner-number" aria-label="Slide 1 of 4">01 / 04</span></div>
+            <div class="promise-progress" role="progressbar" aria-label="Sales capability progress" aria-valuemin="1" aria-valuemax="4" aria-valuenow="1"><span></span></div>
+            <div class="promise-list" aria-label="Agent capabilities">
+              <div class="promise-line is-active" data-slide="0"><img class="promise-mobile-image" src="./assets/sale-objections.svg" alt="A customer question answered with a helpful size guide" /><span class="promise-line-number">01</span><div class="promise-line-copy"><strong>ANSWER PRODUCT QUESTIONS</strong><p>Use your catalog and policies to answer questions about price, size, or delivery.</p></div></div>
+              <div class="promise-line" data-slide="1"><img class="promise-mobile-image" src="./assets/sale-recommendations.svg" alt="A product recommendation paired with a useful add-on" /><span class="promise-line-number">02</span><div class="promise-line-copy"><strong>RECOMMEND RELATED ITEMS</strong><p>Suggest the right product and a useful add-on.</p></div></div>
+              <div class="promise-line" data-slide="2"><img class="promise-mobile-image" src="./assets/sale-follow-up.svg" alt="A timely follow-up that brings a buyer back" /><span class="promise-line-number">03</span><div class="promise-line-copy"><strong>FOLLOW UP WITH BUYERS</strong><p>Continue the conversation when a buyer stops before ordering.</p></div></div>
+              <div class="promise-line" data-slide="3"><img class="promise-mobile-image" src="./assets/sale-order.svg" alt="An order receipt confirmed and ready for fulfilment" /><span class="promise-line-number">04</span><div class="promise-line-copy"><strong>ASK FOR ORDER CONFIRMATION</strong><p>Collect the product, quantity, address, and phone number. Ask the buyer to confirm.</p></div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="feature-strip" aria-label="Relay feature highlights">
+        <div class="feature-track">
+          <div class="feature-set"><span>REPLIES TO COMMENTS AND MESSAGES</span><b>✳</b><span>ANSWERS PRODUCT QUESTIONS</span><b>✳</b><span>COLLECTS ORDER DETAILS</span><b>✳</b><span>FOLLOWS UP WITH BUYERS</span><b>✳</b><span>UNDERSTANDS VOICE NOTES</span><b>✳</b><span>SENDS CONFIRMED ORDERS</span><b>✳</b></div>
+          <div class="feature-set" aria-hidden="true"><span>REPLIES TO COMMENTS AND MESSAGES</span><b>✳</b><span>ANSWERS PRODUCT QUESTIONS</span><b>✳</b><span>COLLECTS ORDER DETAILS</span><b>✳</b><span>FOLLOWS UP WITH BUYERS</span><b>✳</b><span>UNDERSTANDS VOICE NOTES</span><b>✳</b><span>SENDS CONFIRMED ORDERS</span><b>✳</b></div>
+        </div>
+      </div>
+
+      <section class="flow grid-surface" id="flow" aria-labelledby="flow-title">
+        <div class="section-topline"><span>EXAMPLE / BUYER TO ORDER</span><span>ILLUSTRATIVE DEMO ↘</span></div>
+        <div class="flow-heading reveal"><h2 id="flow-title">SEE THE <span>BUYER CHAT.</span><br />SEE THE <span>ORDER.</span></h2><p>This sample shows <span class="relay-name">Relay</span> recommending an available color, confirming an order, and noting a restock request. The conversation and its details are illustrative.</p></div>
+        <div class="conversation-demo reveal" aria-label="Illustrative buyer and Relay conversation">
+          <div class="conversation-demo-top"><span>ILLUSTRATIVE CONVERSATION</span><span>SAMPLE ORDER + RESTOCK REQUEST</span></div>
+          <div class="conversation-thread">
+            <div class="conversation-bubble buyer"><span>BUYER / MESSAGE</span><p lang="fr-DZ">Salam, svp nel9a 3andkom Olive set taille M ?</p></div>
+            <div class="conversation-bubble relay"><span><span class="relay-name">RELAY</span> / REPLY</span><p lang="fr-DZ">Salam ! Malheureusement l'Olive set kmel déjà. Mais kayn Burgundy, li rah tendance, w taille M disponible b 3900 DZD. N9tar7ha 3lik ?</p></div>
+            <div class="conversation-bubble buyer"><span>BUYER / MESSAGE</span><p lang="fr-DZ">Bien, Burgundy c'est une de mes couleurs préférées. Nheb wahed.</p></div>
+            <div class="conversation-bubble relay"><span><span class="relay-name">RELAY</span> / REPLY</span><p lang="fr-DZ">Parfait ! Ab3atli l'adresse w numéro ta3ek, w ana nkaffel b ba9i.</p></div>
+            <div class="conversation-bubble buyer"><span>BUYER / MESSAGE</span><p lang="fr-DZ">Akid. Lotfi, Oran. 0555 12 34 56.</p></div>
+            <div class="conversation-bubble relay"><span><span class="relay-name">RELAY</span> / CONFIRMATION</span><p lang="fr-DZ">D'accord. Burgundy Set, taille M, 3900 DZD, livraison l Lotfi à Oran. Nconfirmi la commande ?</p></div>
+            <div class="conversation-bubble buyer"><span>BUYER / MESSAGE</span><p lang="fr-DZ">Oui, confirmi.</p></div>
+            <div class="conversation-bubble relay"><span><span class="relay-name">RELAY</span> / ORDER UPDATE</span><p lang="fr-DZ">Parfait ! Commande ta3ek tconfirmat, rahi f préparation w twsslek inchallah f 2 jours. W wach t7eb ninformik ki yarja3 l'Olive set f stock ?</p></div>
+            <div class="conversation-bubble buyer"><span>BUYER / MESSAGE</span><p lang="fr-DZ">Oui svp.</p></div>
+            <div class="conversation-bubble relay"><span><span class="relay-name">RELAY</span> / RESTOCK REQUEST</span><p lang="fr-DZ">D'accord, 7attitek f la liste. Nhar yarja3 l'Olive set, nab3atlek SMS direct. Ra9ab les SMS ta3ek 😄</p></div>
+          </div>
+          <div class="conversation-demo-foot"><strong>CONFIRMED ORDER</strong><span>Burgundy Set / M × 1 · 3,900 DZD<br />Lotfi, Oran · 0555 12 34 56<br />Olive Set restock SMS requested</span></div>
+        </div>
+        <div class="flow-subhead"><h3>ONE SAMPLE ORDER.<br />SIX WAYS OF ASKING.</h3><p>This separate example shows how <span class="relay-name">Relay</span> reads Algerian and Moroccan Darija, Tunisian Arabic, Modern Standard Arabic, French, and English. Messages with mixed scripts and languages resolve to the same sample order.</p></div>
+        <div class="flow-board reveal" aria-label="Different customer languages resolving to one structured order">
+          <div class="flow-board-top"><span>SAMPLE CUSTOMER MESSAGES <span class="pulse-dot"></span></span><span>ILLUSTRATIVE ORDER / #1847</span></div>
+          <div class="language-flow">
+            <div class="language-inputs" aria-label="Example customer messages">
+              <button class="language-card is-active" type="button" data-language="Algerian Darija" aria-pressed="true"><span class="language-card-top"><b>01 / ALGERIAN DARIJA</b><span class="language-flag" role="img" aria-label="Flag of Algeria">🇩🇿</span></span><span class="language-sample" lang="fr-DZ">Saha, je veux Olive Set taille M, wahed. Liv à Oran, Akid Lotfi. 0555 12 34 56.</span></button>
+              <button class="language-card" type="button" data-language="Moroccan Darija" aria-pressed="false"><span class="language-card-top"><b>02 / MOROCCAN DARIJA</b><span class="language-flag" role="img" aria-label="Flag of Morocco">🇲🇦</span></span><span class="language-sample" lang="ar-MA">Salam, bghit Olive Set M, wahed. Oran Akid Lotfi. 0555 12 34 56.</span></button>
+              <button class="language-card" type="button" data-language="Tunisian Arabic" aria-pressed="false"><span class="language-card-top"><b>03 / TUNISIAN ARABIC</b><span class="language-flag" role="img" aria-label="Flag of Tunisia">🇹🇳</span></span><span class="language-sample" lang="ar-TN" dir="rtl">عسلامة، نحب Olive Set مقاس M، قطعة وحدة. وهران العقيد لطفي. <bdi dir="ltr">0555 12 34 56</bdi>.</span></button>
+              <button class="language-card" type="button" data-language="Modern Standard Arabic" aria-pressed="false"><span class="language-card-top"><b>04 / STANDARD ARABIC</b><span class="language-flag" role="img" aria-label="Flag of Saudi Arabia, representing the Standard Arabic example">🇸🇦</span></span><span class="language-sample" lang="ar" dir="rtl">أريد طقم Olive Set مقاس M، قطعة واحدة. وهران، العقيد لطفي. <bdi dir="ltr">0555 12 34 56</bdi>.</span></button>
+              <button class="language-card" type="button" data-language="French" aria-pressed="false"><span class="language-card-top"><b>05 / FRANÇAIS</b><span class="language-flag" role="img" aria-label="Flag of France">🇫🇷</span></span><span class="language-sample" lang="fr">Je prends un Olive Set en M. Livraison à Akid Lotfi, Oran. 0555 12 34 56.</span></button>
+              <button class="language-card" type="button" data-language="English" aria-pressed="false"><span class="language-card-top"><b>06 / ENGLISH</b><span class="language-flag" role="img" aria-label="Flag of the United Kingdom">🇬🇧</span></span><span class="language-sample" lang="en">One Olive Set, size M. Deliver to Akid Lotfi, Oran. 0555 12 34 56.</span></button>
+            </div>
+            <div class="language-to-order" aria-hidden="true"><span>→</span></div>
+            <div class="order-result" aria-live="polite">
+              <div class="order-result-head"><span>ORDER DETAILS EXTRACTED</span><strong>✓</strong></div>
+              <div class="order-result-source">FROM <span id="order-source">ALGERIAN DARIJA</span></div>
+              <div class="order-result-title">ORDER<br />#1847</div>
+              <dl class="order-fields"><div><dt>PRODUCT</dt><dd>Olive Set / M</dd></div><div><dt>QUANTITY</dt><dd>1</dd></div><div><dt>PRICE <small>SAMPLE PRICE</small></dt><dd>3,900 DZD</dd></div><div><dt>ADDRESS</dt><dd>Akid Lotfi, Oran</dd></div><div><dt>PHONE</dt><dd>0555 12 34 56</dd></div></dl>
+              <div class="order-result-foot">SAMPLE ORDER DETAILS FROM THE BUYER'S MESSAGE.</div>
+            </div>
+          </div>
+          <div class="flow-progress" aria-hidden="true"><span></span></div>
+          <div class="flow-board-foot"><span>LANGUAGE DETECTED FROM THE MESSAGE.</span><button class="replay-button" type="button" aria-label="Replay language examples">REPLAY EXAMPLES ↺</button></div>
+        </div>
+        <div class="voice-section reveal" aria-labelledby="voice-title">
+          <div class="voice-heading"><span class="eyebrow">VOICE NOTE EXAMPLE</span><h3 id="voice-title">A VOICE NOTE<br /><em>CAN START AN ORDER.</em></h3><p><span class="relay-name">Relay</span> can turn a buyer's voice note into text and order details. This is an illustrative example.</p></div>
+          <div class="voice-journey">
+            <div class="voice-panel voice-in"><span class="voice-panel-label">01 / CUSTOMER VOICE NOTE</span><div class="voice-bubble"><span class="voice-play" aria-hidden="true">▶</span><span class="voice-wave" aria-label="Voice note waveform"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="voice-time">0:12</span></div><small>ALGERIAN DARIJA · MOROCCAN DARIJA · TUNISIAN ARABIC · STANDARD ARABIC · FRENCH · ENGLISH</small></div>
+            <span class="voice-arrow" aria-hidden="true">→</span>
+            <div class="voice-panel voice-transcript"><span class="voice-panel-label">02 / <span class="relay-name">RELAY</span> UNDERSTANDS</span><p lang="fr-DZ">“Saha, je veux Olive Set taille M, wahed. Liv à Oran…”</p><span class="voice-understood">VOICE → TEXT ✓</span></div>
+            <span class="voice-arrow" aria-hidden="true">→</span>
+            <div class="voice-panel voice-order"><span class="voice-panel-label">03 / SAMPLE ORDER DETAILS</span><strong>ORDER #1847</strong><span>OLIVE SET / M × 1</span><span>3,900 DZD · ORAN</span><span>0555 12 34 56</span><b>CONFIRMED ✓</b></div>
+          </div>
+        </div>
+        <div class="erp-connect-row reveal"><span>CONNECTED ORDER SYSTEM</span><strong><a href="https://www.codpilot.net/en" target="_blank" rel="noopener noreferrer">CodPilot ↗</a> <small>+ OTHER SYSTEMS TO CONFIRM</small></strong><p>After setup, <span class="relay-name">Relay</span> can send confirmed order details to the connected system. Ask which integrations are available for your store.</p></div>
+      </section>
+
+      <section class="channels section-grid" id="integrations" aria-labelledby="channels-title">
+        <div class="channels-heading"><span class="eyebrow">FIT / CHANNELS AND STORE</span><h2 id="channels-title">START WITH THE<br /><em>INBOXES</em><br />YOU USE.</h2><p><span class="relay-name">Relay</span> needs the channels where buyers write to you and a connected place for confirmed orders. Check availability for your setup.</p></div>
+        <div class="logo-wall" aria-label="Channel and store connection examples to confirm">
+          <div class="logo-tile reveal"><img src="https://cdn.simpleicons.org/instagram/E4405F" alt="Instagram" /><span>INSTAGRAM</span></div>
+          <div class="logo-tile reveal"><img src="https://cdn.simpleicons.org/messenger/00B2FF" alt="Messenger" /><span>MESSENGER</span></div>
+          <div class="logo-tile reveal"><img src="https://cdn.simpleicons.org/facebook/0866FF" alt="Facebook" /><span>FACEBOOK</span></div>
+          <div class="logo-tile reveal"><img src="https://cdn.simpleicons.org/whatsapp/25D366" alt="WhatsApp" /><span>WHATSAPP</span></div>
+          <div class="logo-tile shopify-tile reveal"><img src="https://cdn.simpleicons.org/shopify/95BF47" alt="Shopify" /><span>SHOPIFY</span><small>STORE EXAMPLE</small></div>
+        </div>
+        <p class="integration-note">CONNECTIONS SHOWN ARE EXAMPLES. CONFIRM WHICH ARE AVAILABLE FOR YOUR STORE.</p>
+      </section>
+
+      <section class="control grid-surface" id="review" aria-labelledby="control-title">
+        <div class="section-topline"><span>ORDER REVIEW</span><span>ILLUSTRATIVE EXAMPLE</span></div>
+        <div class="control-layout"><div class="control-copy reveal"><h2 id="control-title">REVIEW THE<br /><span>ORDERS</span><br />THAT NEED YOU.</h2><p>Choose which order changes <span class="relay-name">Relay</span> can send and which need your approval. This example shows an address that needs review.</p><a class="button button-outline" href="#control-example">SEE THE REVIEW EXAMPLE <span class="button-arrow" aria-hidden="true">↗</span></a></div><div class="control-card reveal" id="control-example"><div class="control-card-top"><span>SAMPLE ORDER #1847</span><span>ILLUSTRATIVE REVIEW</span></div><div class="activity-row"><span class="activity-icon">✓</span><div><strong>Buyer confirmed the order</strong><small>Sample Instagram message · 14:32</small></div><span>DONE</span></div><div class="activity-row"><span class="activity-icon">✓</span><div><strong>Order details sent to the store</strong><small>Product and delivery details checked</small></div><span>DONE</span></div><div class="activity-row needs-review"><span class="activity-icon">!</span><div><strong>Address needs review</strong><small>Your team decides the next action</small></div><span>REVIEW</span></div><div class="control-card-bottom"><span>EXAMPLE APPROVAL RULES</span><span>✳</span></div></div></div>
+      </section>
+
+      <section class="proof-section grid-surface" id="proof" aria-labelledby="proof-title">
+        <div class="section-topline"><span>HOW TO CHECK THE FIT</span><span>YOUR OWN STORE DATA</span></div>
+        <div class="proof-layout"><div><h2 id="proof-title">TEST IT WITH A<br /><em>REAL BUYER QUESTION.</em></h2><p>The conversations and order above are illustrative. In a walkthrough, use one of your own product questions. Check the reply, the order details, and any step that needs your review.</p></div><aside class="proof-placeholder"><span>CUSTOMER PROOF PENDING</span><strong>Verified customer results will go here.</strong><p>We have not published a verified result or customer quote yet.</p></aside></div>
+      </section>
+
+      <section class="questions section-grid" id="questions" aria-labelledby="questions-title"><div class="questions-aside"><span class="eyebrow">QUESTIONS BEFORE SETUP</span><h2 id="questions-title">WHAT ELSE<br />DO YOU NEED<br />TO KNOW?</h2></div><div class="faq-list"><details><summary>What if <span class="relay-name">Relay</span> cannot answer a buyer?<span>+</span></summary><p>The conversation can go to your team with the buyer's question and order context so a person can reply.</p></details><details><summary>Can I review changes to my order system?<span>+</span></summary><p>You can choose which updates need a person. Confirm the exact approval options for your connection.</p></details><details><summary>Which channels and stores are available?<span>+</span></summary><p>Instagram, Messenger, Facebook, WhatsApp, Shopify, and CodPilot are shown as setup examples. Ask which connections are live for your account.</p></details><details><summary>Can <span class="relay-name">Relay</span> use my store's tone?<span>+</span></summary><p>Your catalog, policies, and example replies can guide its answers. Ask to review sample replies before launch.</p></details></div></section>
+
+      <section class="final-cta grid-surface" id="contact" aria-labelledby="contact-title"><span class="eyebrow">YOUR NEXT STEP</span><h2 id="contact-title">SEE <span class="relay-name">RELAY</span><br />WITH <em>YOUR MESSAGE.</em></h2><p>Bring a real buyer question to a walkthrough. Booking is not open yet. A contact link will appear here when available.</p><span class="button button-lime button-large contact-pending" aria-disabled="true">WALKTHROUGH LINK PENDING <span class="button-arrow" aria-hidden="true">↗</span></span><div class="final-orbit" aria-hidden="true">✳</div></section>
+    </main>
+    <footer><a class="brand brand-toggle" href="#top" aria-label="Relay home"><span class="brand-glyph" aria-hidden="true"><span class="brand-slash">/</span><span class="brand-r">R</span></span><span class="brand-tail" aria-hidden="true">elay</span><span class="brand-star-box" aria-hidden="true"><svg viewBox="0 0 100 100" focusable="false"><g fill="currentColor"><rect x="45" y="5" width="10" height="90" rx="1" /><rect x="45" y="5" width="10" height="90" rx="1" transform="rotate(45 50 50)" /><rect x="45" y="5" width="10" height="90" rx="1" transform="rotate(90 50 50)" /><rect x="45" y="5" width="10" height="90" rx="1" transform="rotate(135 50 50)" /></g></svg></span></a><span>CONVERSATIONS → COMMERCE → OPERATIONS</span><a href="#top">BACK TO TOP ↑</a></footer>
+  </body>
+</html>
