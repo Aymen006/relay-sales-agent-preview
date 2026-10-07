@@ -350,3 +350,25 @@ html.intro-locked,html.intro-locked body{overflow:hidden}
 @keyframes mascot-box-follow{0%,100%{transform:translate3d(0,0,0) rotate(-1deg)}25%{transform:translate3d(0,5px,0) rotate(1deg)}50%{transform:translate3d(0,0,0) rotate(2deg)}75%{transform:translate3d(0,5px,0) rotate(0deg)}}
 @keyframes mascot-bubble-breathe{0%,100%{transform:scale(.97)}50%{transform:scale(1.03)}}
 @media(prefers-reduced-motion:reduce){.mascot-card.is-walking .mascot-walk-static{display:block}.mascot-card.is-walking .mascot-walk-animated{display:none}}
+
+/* Give the fixed navigation enough presence on large Safari viewports. */
+@media(min-width:761px){
+  section[id]{scroll-margin-top:92px}
+  .site-header{height:92px}
+  .site-menu{top:92px}
+  .site-header .brand-toggle{width:140px;height:58px;flex-basis:140px;font-size:48px}
+  .site-header .brand-glyph{top:5px;width:39px;height:48px}
+  .site-header .brand-tail{top:5px;left:20px}
+  .site-header .brand-star-box{top:-1px;left:96px;width:28px;height:28px}
+  .header-mid{font-size:13px;padding:12px 17px}
+  .header-actions{gap:10px}
+  .site-header .button-small{min-height:44px;padding-left:16px;font-size:16px}
+  .site-header .button-small .button-arrow{width:32px;height:32px;font-size:19px}
+  .menu-toggle{width:44px;height:44px}
+  .menu-toggle span{width:22px}
+}
+@media(max-width:760px){
+  .site-header .button-small{min-height:42px;font-size:14px}
+  .site-header .button-small .button-arrow{width:30px;height:30px;font-size:18px}
+  .menu-toggle{width:44px;height:44px}
+}
