@@ -328,3 +328,31 @@ html.intro-locked,html.intro-locked body{overflow:hidden}
 @media(prefers-reduced-motion:reduce){.intro-overlay{transition:opacity .6s ease-out!important;transition-duration:.6s!important;transform:none!important;filter:none!important}.intro-caret{animation:none;opacity:0}}
 
 @media(max-width:760px){.language-card-top{display:flex;align-items:center}.language-flag{width:36px;height:26px;flex-basis:36px;font-size:21px}}
+
+/* Keep the original card fixed in the center; only the character walks. */
+.mascot-card{animation:none;overflow:hidden}
+.mascot-walk-animated{display:none;position:absolute;inset:2.5%;width:95%;height:95%}
+.mascot-card.is-walking .mascot-walk-static{display:none}
+.mascot-card.is-walking .mascot-walk-animated{display:block}
+.mascot-walk-rig{display:block;width:100%;height:100%;overflow:visible;--step:1.55s}
+.mascot-walk-rig .walk-body,.mascot-walk-rig .walk-leg,.mascot-walk-rig .walk-shoe,.mascot-walk-rig .walk-arm,.mascot-walk-rig .walk-paper,.mascot-walk-rig .walk-bubble{transform-box:view-box;will-change:transform}
+.walk-body{transform-origin:600px 650px;animation:mascot-body-step var(--step) cubic-bezier(.45,0,.55,1) infinite}
+.walk-leg-left{transform-origin:560px 780px;animation:mascot-leg-left var(--step) cubic-bezier(.45,0,.55,1) infinite}
+.walk-leg-right{transform-origin:667px 781px;animation:mascot-leg-right var(--step) cubic-bezier(.45,0,.55,1) infinite}
+.walk-shoe-left{transform-origin:492px 954px;animation:mascot-shoe-left var(--step) cubic-bezier(.45,0,.55,1) infinite}
+.walk-shoe-right{transform-origin:786px 958px;animation:mascot-shoe-right var(--step) cubic-bezier(.45,0,.55,1) infinite}
+.walk-arm-left{transform-origin:388px 599px;animation:mascot-phone-sway var(--step) cubic-bezier(.45,0,.55,1) infinite}
+.walk-arm-right{transform-origin:805px 608px;animation:mascot-box-follow var(--step) cubic-bezier(.45,0,.55,1) 40ms infinite}
+.walk-paper{transform-origin:633px 324px;animation:mascot-paper-follow var(--step) cubic-bezier(.45,0,.55,1) 110ms infinite}
+.walk-bubble{transform-origin:287px 281px;animation:mascot-bubble-breathe 2.2s cubic-bezier(.45,0,.55,1) infinite}
+.mascot-card.is-paused .mascot-walk-rig *{animation-play-state:paused!important}
+@keyframes mascot-body-step{0%,50%,100%{transform:translate3d(0,0,0) rotate(2deg) scaleY(1)}12.5%,62.5%{transform:translate3d(0,12px,0) rotate(3deg) scaleY(.98)}37.5%,87.5%{transform:translate3d(0,-10px,0) rotate(1deg) scaleY(1.01)}}
+@keyframes mascot-leg-left{0%,100%{transform:rotate(-15deg)}12.5%{transform:rotate(-11deg)}25%{transform:rotate(-2deg)}37.5%{transform:rotate(10deg)}50%{transform:rotate(16deg)}62.5%{transform:rotate(11deg)}75%{transform:rotate(2deg)}87.5%{transform:rotate(-10deg)}}
+@keyframes mascot-leg-right{0%,100%{transform:rotate(16deg)}12.5%{transform:rotate(11deg)}25%{transform:rotate(2deg)}37.5%{transform:rotate(-10deg)}50%{transform:rotate(-15deg)}62.5%{transform:rotate(-11deg)}75%{transform:rotate(-2deg)}87.5%{transform:rotate(10deg)}}
+@keyframes mascot-shoe-left{0%,100%{transform:rotate(0deg) translate3d(0,0,0)}12.5%{transform:rotate(2deg) translate3d(-23px,6px,0)}25%{transform:rotate(13deg) translate3d(-34px,-19px,0)}37.5%{transform:rotate(7deg) translate3d(-15px,-45px,0)}50%{transform:rotate(-4deg) translate3d(11px,-21px,0)}62.5%{transform:rotate(-2deg) translate3d(5px,1px,0)}75%{transform:rotate(0deg) translate3d(-11px,1px,0)}87.5%{transform:rotate(1deg) translate3d(-21px,0,0)}}
+@keyframes mascot-shoe-right{0%,100%{transform:rotate(-3deg) translate3d(7px,-17px,0)}12.5%{transform:rotate(1deg) translate3d(1px,1px,0)}25%{transform:rotate(0deg) translate3d(-12px,0,0)}37.5%{transform:rotate(0deg) translate3d(-21px,0,0)}50%{transform:rotate(0deg) translate3d(0,0,0)}62.5%{transform:rotate(2deg) translate3d(-23px,6px,0)}75%{transform:rotate(13deg) translate3d(-34px,-19px,0)}87.5%{transform:rotate(7deg) translate3d(-15px,-45px,0)}}
+@keyframes mascot-phone-sway{0%,100%{transform:rotate(-2deg)}25%{transform:rotate(1deg)}50%{transform:rotate(3deg)}75%{transform:rotate(-1deg)}}
+@keyframes mascot-box-follow{0%,100%{transform:translate3d(0,0,0) rotate(-1deg)}25%{transform:translate3d(0,5px,0) rotate(1deg)}50%{transform:translate3d(0,0,0) rotate(2deg)}75%{transform:translate3d(0,5px,0) rotate(0deg)}}
+@keyframes mascot-paper-follow{0%,100%{transform:rotate(-3deg)}25%{transform:rotate(1deg)}50%{transform:rotate(4deg)}75%{transform:rotate(-1deg)}}
+@keyframes mascot-bubble-breathe{0%,100%{transform:scale(.97)}50%{transform:scale(1.03)}}
+@media(prefers-reduced-motion:reduce){.mascot-card.is-walking .mascot-walk-static{display:block}.mascot-card.is-walking .mascot-walk-animated{display:none}}

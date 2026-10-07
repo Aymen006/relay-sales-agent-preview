@@ -9,9 +9,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./styles.css?v=3" />
+    <link rel="stylesheet" href="./styles.css?v=4" />
     <script>try{if(!sessionStorage.getItem('relay-intro-seen')){document.documentElement.classList.add('intro-pending');sessionStorage.setItem('relay-intro-seen','1')}}catch(error){document.documentElement.classList.add('intro-pending')}</script>
     <script src="./script.js?v=3" defer></script>
+    <script src="./mascot-walk.js?v=1" defer></script>
   </head>
   <body>
     <div class="intro-overlay" id="relay-intro" role="dialog" aria-modal="true" aria-labelledby="intro-readable" aria-hidden="true">
@@ -46,7 +47,10 @@
           <div class="hero-stage reveal-on-load" aria-label="Commerce channels turning into an order">
             <div class="channel-sticker channel-instagram" title="Instagram"><img src="./assets/instagram.svg" alt="Instagram" /><span>COMMENT</span></div>
             <div class="channel-sticker channel-messenger" title="Messenger"><img src="./assets/messenger.svg" alt="Messenger" /><span>MESSAGE</span></div>
-            <div class="mascot-card"><img src="./assets/relay-receipt-agent.svg" alt="Original ink illustration of a friendly receipt-printer sales agent carrying a phone and parcel" /></div>
+            <div class="mascot-card" role="img" aria-label="Relay's receipt-printer sales agent walking in place while carrying a phone and parcel">
+              <img class="mascot-walk-static" src="./assets/relay-receipt-agent.svg" alt="" aria-hidden="true" />
+              <div class="mascot-walk-animated" aria-hidden="true"></div>
+            </div>
             <div class="channel-sticker channel-facebook" title="Facebook"><img src="./assets/facebook.svg" alt="Facebook" /><span>COMMENT</span></div>
             <div class="channel-sticker channel-whatsapp" title="WhatsApp"><img src="./assets/whatsapp.svg" alt="WhatsApp" /><span>ORDER</span></div>
             <div class="outcome-stamp" aria-hidden="true"><img src="./assets/shopify.svg" alt="" /> ORDER<br /><strong>CONFIRMED</strong><span>✓</span></div>
