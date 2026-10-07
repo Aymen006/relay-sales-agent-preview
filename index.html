@@ -9,9 +9,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./styles.css?v=3" />
+    <link rel="stylesheet" href="./styles.css?v=5" />
     <script>try{if(!sessionStorage.getItem('relay-intro-seen')){document.documentElement.classList.add('intro-pending');sessionStorage.setItem('relay-intro-seen','1')}}catch(error){document.documentElement.classList.add('intro-pending')}</script>
     <script src="./script.js?v=3" defer></script>
+    <script src="./mascot-strip.js?v=4" defer></script>
   </head>
   <body>
     <div class="intro-overlay" id="relay-intro" role="dialog" aria-modal="true" aria-labelledby="intro-readable" aria-hidden="true">
@@ -46,7 +47,10 @@
           <div class="hero-stage reveal-on-load" aria-label="Commerce channels turning into an order">
             <div class="channel-sticker channel-instagram" title="Instagram"><img src="https://cdn.simpleicons.org/instagram/E4405F" alt="Instagram" /><span>COMMENT</span></div>
             <div class="channel-sticker channel-messenger" title="Messenger"><img src="https://cdn.simpleicons.org/messenger/00B2FF" alt="Messenger" /><span>MESSAGE</span></div>
-            <div class="mascot-card"><img src="./assets/relay-receipt-agent.svg" alt="Original ink illustration of a friendly receipt-printer sales agent carrying a phone and parcel" /></div>
+            <div class="mascot-strip" role="img" aria-label="A repeating parade of Relay's receipt-printer mascot walking with a phone and an order parcel">
+              <div class="mascot-strip-track" aria-hidden="true"></div>
+              <img class="mascot-strip-static" src="./assets/relay-receipt-agent.svg" alt="" aria-hidden="true" />
+            </div>
             <div class="channel-sticker channel-facebook" title="Facebook"><img src="https://cdn.simpleicons.org/facebook/0866FF" alt="Facebook" /><span>COMMENT</span></div>
             <div class="channel-sticker channel-whatsapp" title="WhatsApp"><img src="https://cdn.simpleicons.org/whatsapp/25D366" alt="WhatsApp" /><span>ORDER</span></div>
             <div class="outcome-stamp" aria-hidden="true"><img src="https://cdn.simpleicons.org/shopify/95BF47" alt="" /> ORDER<br /><strong>CONFIRMED</strong><span>✓</span></div>

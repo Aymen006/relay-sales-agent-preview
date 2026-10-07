@@ -328,3 +328,45 @@ html.intro-locked,html.intro-locked body{overflow:hidden}
 @media(prefers-reduced-motion:reduce){.intro-overlay{transition:opacity .6s ease-out!important;transition-duration:.6s!important;transform:none!important;filter:none!important}.intro-caret{animation:none;opacity:0}}
 
 @media(max-width:760px){.language-card-top{display:flex;align-items:center}.language-flag{width:36px;height:26px;flex-basis:36px;font-size:21px}}
+
+/* The original mascot artwork is clipped into moving SVG rig layers at runtime. */
+.mascot-strip{--walk-speed:.15;--copy-gap:.72;--stack-offset-y:8px;--stack-rotate:1.5deg;--stack-scale:.97;--outline-width:6px;position:absolute;inset:3px 0 auto;height:247px;z-index:1;overflow:hidden;isolation:isolate;border:1px solid var(--lime);border-radius:9px;background:var(--forest-2);box-shadow:9px 10px 0 #07171064;mask-image:linear-gradient(90deg,transparent 0%,#000 7%,#000 93%,transparent 100%)}
+.mascot-strip::before{content:"";position:absolute;inset:0;background-image:linear-gradient(#f5f3ec0b 1px,transparent 1px),linear-gradient(90deg,#f5f3ec0b 1px,transparent 1px);background-size:40px 40px;pointer-events:none}
+.mascot-strip::after{content:"";position:absolute;left:0;right:0;bottom:14px;border-top:1px solid #d8f36a54;pointer-events:none}
+.mascot-strip-track{position:absolute;inset:0 auto 0 0;height:100%;width:calc(var(--strip-period) * 2);transform:translate3d(0,0,0);animation:mascot-strip-travel var(--strip-duration,28s) linear infinite;will-change:transform}
+.mascot-strip-set{position:absolute;top:0;height:100%}
+.mascot-copy{position:absolute;bottom:12px;transform-origin:50% 100%;will-change:transform;pointer-events:none}
+.mascot-copy::before{content:"";position:absolute;left:20%;right:20%;bottom:2px;height:10px;background:#06140e;border-radius:50%;opacity:.4}
+.mascot-rig{display:block;width:100%;height:100%;overflow:visible;filter:drop-shadow(calc(var(--outline-width) * .5) 0 0 #fff) drop-shadow(calc(var(--outline-width) * -.5) 0 0 #fff) drop-shadow(0 calc(var(--outline-width) * .5) 0 #fff) drop-shadow(0 calc(var(--outline-width) * -.5) 0 #fff) drop-shadow(0 4px 10px #0003)}
+.rig-body,.rig-leg,.rig-shoe,.rig-arm,.rig-paper,.rig-bubble,.rig-mouth,.rig-blink,.rig-dot{transform-box:view-box;will-change:transform,opacity}
+.rig-body{transform-origin:600px 650px;animation:rig-body-step var(--walk-cycle,4s) cubic-bezier(.45,0,.55,1) var(--phase,0s) infinite}
+.rig-leg-left{transform-origin:560px 780px;animation:rig-leg-a var(--walk-cycle,4s) cubic-bezier(.45,0,.55,1) var(--phase,0s) infinite}
+.rig-leg-right{transform-origin:667px 781px;animation:rig-leg-b var(--walk-cycle,4s) cubic-bezier(.45,0,.55,1) var(--phase,0s) infinite}
+.rig-shoe-left{transform-origin:492px 954px;animation:rig-shoe-a var(--walk-cycle,4s) cubic-bezier(.45,0,.55,1) var(--phase,0s) infinite}
+.rig-shoe-right{transform-origin:786px 958px;animation:rig-shoe-b var(--walk-cycle,4s) cubic-bezier(.45,0,.55,1) var(--phase,0s) infinite}
+.rig-arm-left{transform-origin:388px 599px;animation:rig-phone var(--walk-cycle,4s) cubic-bezier(.45,0,.55,1) var(--phase,0s) infinite}
+.rig-arm-right{transform-origin:805px 608px;animation:rig-box var(--walk-cycle,4s) cubic-bezier(.45,0,.55,1) calc(var(--phase,0s) + 40ms) infinite}
+.rig-paper{transform-origin:633px 324px;animation:rig-paper-sway var(--walk-cycle,4s) cubic-bezier(.45,0,.55,1) calc(var(--phase,0s) + 110ms) infinite}
+.rig-bubble{transform-origin:287px 281px;animation:rig-bubble-pulse 2.1s cubic-bezier(.45,0,.55,1) var(--phase,0s) infinite}
+.rig-dot{opacity:0;animation:rig-dot-flash 1.35s ease-in-out infinite}
+.rig-dot-2{animation-delay:150ms}.rig-dot-3{animation-delay:300ms}
+.rig-mouth{transform-origin:575px 576px;animation:rig-talk 1.73s cubic-bezier(.45,0,.55,1) var(--phase,0s) infinite}
+.rig-blink{opacity:0;animation:rig-eye-blink 3.6s steps(1,end) var(--phase,0s) infinite}
+.mascot-strip-static{display:none;position:absolute;left:50%;bottom:11px;height:90%;width:auto;transform:translateX(-50%);filter:drop-shadow(0 0 3px white) drop-shadow(0 4px 10px #0003)}
+.mascot-strip.is-paused .mascot-strip-track,.mascot-strip.is-paused .mascot-strip-track *{animation-play-state:paused!important}
+@keyframes mascot-strip-travel{from{transform:translate3d(0,0,0)}to{transform:translate3d(var(--strip-period),0,0)}}
+@keyframes rig-body-step{0%,50%,100%{transform:translate3d(0,0,0) rotate(2deg) scaleY(1)}12.5%,62.5%{transform:translate3d(0,12px,0) rotate(3deg) scaleY(.98)}37.5%,87.5%{transform:translate3d(0,-10px,0) rotate(1deg) scaleY(1.01)}}
+@keyframes rig-leg-a{0%,100%{transform:rotate(-14deg)}12.5%{transform:rotate(-11deg)}25%{transform:rotate(-2deg)}37.5%{transform:rotate(9deg)}50%{transform:rotate(15deg)}62.5%{transform:rotate(11deg)}75%{transform:rotate(2deg)}87.5%{transform:rotate(-9deg)}}
+@keyframes rig-leg-b{0%,100%{transform:rotate(15deg)}12.5%{transform:rotate(11deg)}25%{transform:rotate(2deg)}37.5%{transform:rotate(-9deg)}50%{transform:rotate(-14deg)}62.5%{transform:rotate(-11deg)}75%{transform:rotate(-2deg)}87.5%{transform:rotate(9deg)}}
+@keyframes rig-shoe-a{0%,100%{transform:rotate(0deg) translate3d(0,0,0)}12.5%{transform:rotate(2deg) translate3d(-23px,6px,0)}25%{transform:rotate(13deg) translate3d(-34px,-19px,0)}37.5%{transform:rotate(7deg) translate3d(-15px,-45px,0)}50%{transform:rotate(-4deg) translate3d(11px,-21px,0)}62.5%{transform:rotate(-2deg) translate3d(5px,1px,0)}75%{transform:rotate(0deg) translate3d(-11px,1px,0)}87.5%{transform:rotate(1deg) translate3d(-21px,0,0)}}
+@keyframes rig-shoe-b{0%,100%{transform:rotate(-3deg) translate3d(7px,-17px,0)}12.5%{transform:rotate(1deg) translate3d(1px,1px,0)}25%{transform:rotate(0deg) translate3d(-12px,0,0)}37.5%{transform:rotate(0deg) translate3d(-21px,0,0)}50%{transform:rotate(0deg) translate3d(0,0,0)}62.5%{transform:rotate(2deg) translate3d(-23px,6px,0)}75%{transform:rotate(13deg) translate3d(-34px,-19px,0)}87.5%{transform:rotate(7deg) translate3d(-15px,-45px,0)}}
+@keyframes rig-phone{0%,100%{transform:rotate(-2deg)}25%{transform:rotate(1deg)}50%{transform:rotate(3deg)}75%{transform:rotate(-1deg)}}
+@keyframes rig-box{0%,100%{transform:translate3d(0,0,0) rotate(-1deg)}25%{transform:translate3d(0,5px,0) rotate(1deg)}50%{transform:translate3d(0,0,0) rotate(2deg)}75%{transform:translate3d(0,5px,0) rotate(0deg)}}
+@keyframes rig-paper-sway{0%,100%{transform:rotate(-3deg)}25%{transform:rotate(1deg)}50%{transform:rotate(4deg)}75%{transform:rotate(-1deg)}}
+@keyframes rig-bubble-pulse{0%,100%{transform:scale(.96)}50%{transform:scale(1.04)}}
+@keyframes rig-dot-flash{0%,24%,100%{opacity:0}10%,18%{opacity:1}}
+@keyframes rig-talk{0%,18%,52%,80%,100%{transform:scaleY(1)}11%,32%,67%,91%{transform:scaleY(.65)}}
+@keyframes rig-eye-blink{0%,93%,97%,100%{opacity:0}94%,96%{opacity:1}}
+@media(max-width:760px){.mascot-strip{--stack-offset-y:8px;inset:8px 0 auto;height:266px;box-shadow:6px 7px 0 #07171064}}
+@media(max-width:420px){.mascot-strip{height:247px}}
+@media(prefers-reduced-motion:reduce){.mascot-strip{mask-image:none}.mascot-strip-track{display:none}.mascot-strip-static{display:block}}
